@@ -1,35 +1,39 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+// #define USE
+#ifdef USE
 
 struct ListNode {
 	int val;
 	struct ListNode *next;
 };
 
-//struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2) {
-//	struct ListNode* res = (struct ListNode *)malloc(sizeof(struct ListNode));
-//	res->next = NULL;
-//	struct ListNode* ptr = res;
-//
-//	while (l1 && l2) {
-//		if (l1->val < l2->val) {
-//			ptr->next = l1;
-//			ptr = ptr->next;
-//			l1 = l1->next;
-//		}
-//		else {
-//			ptr->next = l2;
-//			ptr = ptr->next;
-//			l2 = l2->next;
-//		}
-//	}
-//	ptr->next = l1 ? l1 : l2;
-//
-//	return res->next;
-//}
+// Solution 1
+struct ListNode* mergeTwoLists_1(struct ListNode* l1, struct ListNode* l2) {
+	struct ListNode* res = (struct ListNode *)malloc(sizeof(struct ListNode));
+	res->next = NULL;
+	struct ListNode* ptr = res;
 
-struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2) {
+	while (l1 && l2) {
+		if (l1->val < l2->val) {
+			ptr->next = l1;
+			ptr = ptr->next;
+			l1 = l1->next;
+		}
+		else {
+			ptr->next = l2;
+			ptr = ptr->next;
+			l2 = l2->next;
+		}
+	}
+	ptr->next = l1 ? l1 : l2;
+
+	return res->next;
+}
+
+// Solution 2
+struct ListNode* mergeTwoLists_2(struct ListNode* l1, struct ListNode* l2) {
 	if (l1 == NULL) return l2;
 	if (l2 == NULL) return l1;
 	
@@ -43,9 +47,10 @@ struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2) {
 	}
 }
 
-//int main() {
-//
-//
-//	system("pause");
-//	return 0;
-//}
+int main() {
+
+
+	system("pause");
+	return 0;
+}
+#endif

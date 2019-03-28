@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+// #define USE
+#ifdef USE
 
 struct ListNode {
 	int val;
@@ -36,3 +38,4 @@ int main() {
 	system("pause");
 	return 0;
 }
+#endif

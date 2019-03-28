@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <limits.h>
+// #define USE
+#ifdef USE
 
 // ≈–∂œ «∑Ò‘ΩΩÁ
 // INT_MAX = 2147483647
@@ -70,10 +72,11 @@ int myAtoi(char* str) {
 	return  srcNum;
 }
 
-//int main() {
-//	char str[] = "   -91283472332";
-//	printf("%d\n", myAtoi(str));
-//
-//	system("pause");
-//	return 0;
-//}
+int main() {
+	char str[] = "   -91283472332";
+	printf("%d\n", myAtoi(str));
+
+	system("pause");
+	return 0;
+}
+#endif

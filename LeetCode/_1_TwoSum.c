@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 #define HTCAPACITY 50000
+// #define USE
+#ifdef USE
 
 // Solution 1
 int* twoSum_1(int* nums, int numsSize, int target) {
@@ -71,12 +73,13 @@ int* twoSum_2(int* nums, int numsSize, int target) {
 }
 // end of Solution2
 
-//int main(int argc, char const *argv[])
-//{
-//	int nums[] = { 0, 1, 2, 0 };
-//	int *res = twoSum_1(nums, 4, 0);
-//	printf("%d %d\n", res[0], res[1]);
-//
-//	system("pause");
-//	return 0;
-//}
+int main(int argc, char const *argv[])
+{
+	int nums[] = { 0, 1, 2, 0 };
+	int *res = twoSum_1(nums, 4, 0);
+	printf("%d %d\n", res[0], res[1]);
+
+	system("pause");
+	return 0;
+}
+#endif

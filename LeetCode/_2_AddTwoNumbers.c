@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+// #define USE
+#ifdef USE
 
 struct ListNode {
 	int val;
@@ -38,26 +40,27 @@ struct ListNode* addTwoNumbers(struct ListNode* l1, struct ListNode* l2) {
 	return dummyRes->next;
 }
 
-//int main() {
-//	struct ListNode* l1 = (struct ListNode *)malloc(sizeof(struct ListNode));
-//	struct ListNode* l2 = (struct ListNode *)malloc(sizeof(struct ListNode));
-//	struct ListNode* tmp;
-//
-//	l1->val = 2;
-//	l1->next = (struct ListNode *)malloc(sizeof(struct ListNode));
-//	l1->next->val = 4;
-//	l1->next->next = (struct ListNode *)malloc(sizeof(struct ListNode));
-//	l1->next->next->val = 3;
-//	l1->next->next->next = NULL;
-//	l2->val = 5;
-//	l2->next = (struct ListNode *)malloc(sizeof(struct ListNode));
-//	l2->next->val = 6;
-//	l2->next->next = (struct ListNode *)malloc(sizeof(struct ListNode));
-//	l2->next->next->val = 4;
-//	l2->next->next->next = NULL;
-//	tmp = addTwoNumbers(l1, l2);
-//	printf("%d %d %d\n", tmp->val, tmp->next->val, tmp->next->next->val);
-//
-//	system("pause");
-//	return 0;
-//}
+int main() {
+	struct ListNode* l1 = (struct ListNode *)malloc(sizeof(struct ListNode));
+	struct ListNode* l2 = (struct ListNode *)malloc(sizeof(struct ListNode));
+	struct ListNode* tmp;
+
+	l1->val = 2;
+	l1->next = (struct ListNode *)malloc(sizeof(struct ListNode));
+	l1->next->val = 4;
+	l1->next->next = (struct ListNode *)malloc(sizeof(struct ListNode));
+	l1->next->next->val = 3;
+	l1->next->next->next = NULL;
+	l2->val = 5;
+	l2->next = (struct ListNode *)malloc(sizeof(struct ListNode));
+	l2->next->val = 6;
+	l2->next->next = (struct ListNode *)malloc(sizeof(struct ListNode));
+	l2->next->next->val = 4;
+	l2->next->next->next = NULL;
+	tmp = addTwoNumbers(l1, l2);
+	printf("%d %d %d\n", tmp->val, tmp->next->val, tmp->next->next->val);
+
+	system("pause");
+	return 0;
+}
+#endif

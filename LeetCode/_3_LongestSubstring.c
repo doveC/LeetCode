@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+// #define USE
+#ifdef USE
 
 // Solution 1
 int lengthOfLongestSubstring_1(char* s) {
@@ -47,9 +49,10 @@ int lengthOfLongestSubstring_2(char* s) {
 }
 // end solution 2
 
-//int main() {
-//
-//
-//	system("pause");
-//	return 0;
-//}
+int main() {
+
+
+	system("pause");
+	return 0;
+}
+#endif
