@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#if 0
 
 struct ListNode {
 	int val;
@@ -115,3 +116,4 @@ int main() {
 	system("pause");
 	return 0;
 }
+#endif

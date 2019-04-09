@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-// #define USE
+//#define USE
 #ifdef USE
 
 struct ListNode {
@@ -43,6 +43,34 @@ struct ListNode* rotateRight(struct ListNode* head, int k) {
 	return head;
 }
 
+struct ListNode* rotateRight1(struct ListNode* head, int k) {
+	if (head == NULL || head->next == NULL)
+		return head;
+
+	struct ListNode* tail = head;
+	struct ListNode* newHead = head;
+	int length = 1;
+
+	// 先找到链表尾节点
+	while (tail->next) {
+		tail = tail->next;
+		length++;
+	}
+	k %= length;
+
+	// 链表成环
+	tail->next = head;
+
+	// 右移k次，相当于左移length - k次
+	for (int i = 0; i < length - k; i++) {
+		newHead = newHead->next;
+		tail = tail->next;
+	}
+
+	tail->next = NULL;
+	return newHead;
+}
+
 struct ListNode* CreatLL(int* arr, int size) {
 	struct ListNode* dummyHead =
 		(struct ListNode *)malloc(sizeof(struct ListNode));
@@ -75,7 +103,7 @@ int main() {
 	int arr[] = { 0, 1, 2 };
 	struct ListNode* head = CreatLL(arr, 3);
 	printLL(head);
-	head = rotateRight(head, 4);
+	head = rotateRight1(head, 4);
 	printLL(head);
 
 	system("pause");
