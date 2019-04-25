@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <limits.h>
-#if 1
+#if 0
 
 typedef int bool;
 #define true 1
