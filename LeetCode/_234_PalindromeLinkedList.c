@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#if 0
 
 struct ListNode {
 	int val;
@@ -59,7 +60,6 @@ bool isPalindrome1(struct ListNode* head) {
 	return true;
 }
 
-struct ListNode* temp;
 bool check(struct ListNode* head) {
 	if (head == NULL) {
 		return true;
@@ -71,6 +71,7 @@ bool check(struct ListNode* head) {
 	return isPal;
 }
 
+struct ListNode* temp;
 bool isPalindrome(struct ListNode* head) {
 	temp = head;
 	return check(head);
@@ -112,3 +113,4 @@ int main() {
 	system("pause");
 	return 0;
 }
+#endif

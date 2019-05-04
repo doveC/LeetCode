@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
+#if 0
 
 #define HTCAPACITY 5000
 
@@ -153,3 +154,4 @@ int main() {
 	system("pause");
 	return 0;
 }
+#endif

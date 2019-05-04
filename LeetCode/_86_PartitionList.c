@@ -39,6 +39,33 @@ struct ListNode* partition(struct ListNode* head, int x) {
 	return dummyHead->next;
 }
 
+struct ListNode* partition1(struct ListNode* head, int x) {
+	struct ListNode* afterHead =
+		(struct ListNode *)malloc(sizeof(struct ListNode));
+	afterHead->next = NULL;
+	struct ListNode* beforeHead =
+		(struct ListNode *)malloc(sizeof(struct ListNode));
+	beforeHead->next = NULL;
+	struct ListNode* after = afterHead;
+	struct ListNode* before = beforeHead;
+
+	while (head) {
+		if (head->val < x) {
+			before->next = head;
+			before = before->next;
+		}
+		else {
+			after->next = head;
+			after = after->next;
+		}
+		head = head->next;
+	}
+	before->next = afterHead->next;
+	after->next = NULL;
+
+	return beforeHead->next;
+}
+
 struct ListNode* CreatLL(int* arr, int size) {
 	struct ListNode* dummyHead =
 		(struct ListNode *)malloc(sizeof(struct ListNode));

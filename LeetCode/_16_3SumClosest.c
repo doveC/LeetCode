@@ -4,6 +4,7 @@
 #include <string.h>
 #include <math.h>
 #include <limits.h>
+#if 0
 
 void swap(int* a, int* b) {
 	int tmp = *a;
@@ -85,3 +86,4 @@ int main() {
 	system("pause");
 	return 0;
 }
+#endif

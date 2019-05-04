@@ -20,11 +20,7 @@ struct ListNode* reverseList_re(struct ListNode* head) {
 	
 	struct ListNode* newHead = reverseList_re(head->next);
 
-	struct ListNode* ptr = newHead;
-	while (ptr->next) {
-		ptr = ptr->next;
-	}
-	ptr->next = head;
+	head->next->next = head;  // 此时head->next是翻转区域的最后一个元素
 	head->next = NULL;
 
 	return newHead;
