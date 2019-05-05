@@ -14,7 +14,7 @@ bool isValid(char * s) {
 	char* ptr = s;
 
 	while (*ptr) {
-		if (*ptr == '(' || *ptr == '{' || *ptr == '[') {
+		if (*ptr == '(' || *ptr == '{' || *ptr == '[') {  // ×óÀ¨ºÅ
 			stack[size++] = *ptr++;
 		}
 		else {
