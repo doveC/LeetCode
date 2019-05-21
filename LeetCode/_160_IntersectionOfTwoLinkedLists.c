@@ -56,6 +56,18 @@ struct ListNode *getIntersectionNode(struct ListNode *headA, struct ListNode *he
 	}
 }
 
+struct ListNode *getIntersectionNode1(struct ListNode *headA, struct ListNode *headB) {
+	struct ListNode *p1 = headA;
+	struct ListNode *p2 = headB;
+
+	while (p1 != p2) {
+		p1 = (p1 == NULL) ? headB : p1->next;
+		p2 = (p2 == NULL) ? headA : p2->next;
+	}
+
+	return p1;
+}
+
 struct ListNode* CreatLL(int* arr, int size) {
 	struct ListNode* dummyHead =
 		(struct ListNode *)malloc(sizeof(struct ListNode));
@@ -85,12 +97,12 @@ void printLL(struct ListNode* head) {
 }
 
 int main() {
-	int arr[] = { 1, 2, 3, 4, 5 };
-	struct ListNode* headA = CreatLL(arr, sizeof(arr) / sizeof(arr[0]));
-	struct ListNode* headB =
-		(struct ListNode *)malloc(sizeof(struct ListNode));
-	headB->val = 0;
-	headB->next = headA;
+	int arr1[] = { 1, 2, 3, 4, 5 };
+	int arr2[] = { 1, 2, 3 };
+	struct ListNode* headA = CreatLL(arr1, sizeof(arr1) / sizeof(arr1[0]));
+	struct ListNode* headB = CreatLL(arr2, sizeof(arr2) / sizeof(arr2[0]));
+
+	getIntersectionNode1(headA, headB);
 
 	system("pause");
 	return 0;
